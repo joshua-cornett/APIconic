@@ -1,0 +1,48 @@
+{
+  "name": "package.json",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "version-prompt-file": "node -e \"const fs = require('fs'); const semver = require('semver'); const prompt = require('prompt'); const currentVersion = require('./package.json').version; prompt.start(); prompt.get({ properties: { version: { description: `Current version is ${currentVersion}. Enter the version (press Enter to keep current or specify major, minor, patch):` } } }, (err, result) => { const newVersion = semver.valid(result.version.trim()) || currentVersion; const versionFile = './temp-version.txt'; fs.writeFileSync(versionFile, newVersion); console.log(newVersion); })\"",
+    "update-version": "npm run version-prompt-file --ignore-scripts && node -e \"const fs = require('fs'); const semver = require('semver'); const currentVersion = require('./package.json').version; const versionFile = './temp-version.txt'; try { const newVersion = fs.readFileSync(versionFile, 'utf8').trim(); fs.unlinkSync(versionFile); require('fs').writeFileSync('./package.json', JSON.stringify(Object.assign(require('./package.json'), { version: newVersion }), null, 2)); } catch (error) { console.error('Error reading or deleting version file:', error); process.exit(1); }\"",
+    "stage": "git add .",
+    "cz": "npx git-cz",
+    "changelog": "auto-changelog --sort-commits date && git add CHANGELOG.md && git commit --amend --no-edit",
+    "commit": "npm run update-version && npm run stage && npm run cz && npm run changelog ",
+    "release": "git push",
+    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
+    "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\" --quiet"
+  },
+  "author": "joshua m.cornett",
+  "devDependencies": {
+    "@vitejs/plugin-react": "*",
+    "autoprefixer": "*",
+    "cz-conventional-changelog": "*",
+    "eslint": "*",
+    "eslint-config-prettier": "*",
+    "eslint-plugin-import": "*",
+    "eslint-plugin-jsx-a11y": "*",
+    "eslint-plugin-react": "*",
+    "eslint-plugin-react-hooks": "*",
+    "prettier": "*",
+    "vite": "*"
+  },
+  "dependencies": {
+    "auto-changelog": "*",
+    "prompt": "*",
+    "semver": "*"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "auto-changelog": {
+    "output": "CHANGELOG.md",
+    "template": "keepachangelog",
+    "unreleased": true,
+    "commitLimit": false
+  }
+}
