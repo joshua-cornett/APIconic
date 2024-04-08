@@ -31,8 +31,10 @@
   },
   "dependencies": {
     "auto-changelog": "*",
+    "axios": "^1.6.8",
     "prompt": "*",
-    "semver": "*"
+    "semver": "*",
+    "xml2js": "^0.6.2"
   },
   "config": {
     "commitizen": {
