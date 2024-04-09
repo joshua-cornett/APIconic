@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-// import { parseString } from 'xml2js';
+import { parseData } from '../../utils/dataParser'; // Import the helper function
 
-const DataDisplay = () => {
+const NASADataDisplay = () => {
   const [data, setData] = useState(null);
 
   useEffect(() => {
@@ -12,17 +12,9 @@ const DataDisplay = () => {
           'https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY'
         );
 
-        // Parse JSON data
-        setData(response.data);
-
-        // Parse XML data
-        // parseString(response.data, (err, result) => {
-        //   if (!err) {
-        //     setData(result);
-        //   } else {
-        //     console.error(err);
-        //   }
-        // });
+        // Parse data using the helper function
+        const parsedData = await parseData(response.data, 'json');
+        setData(parsedData);
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -45,4 +37,4 @@ const DataDisplay = () => {
   );
 };
 
-export default DataDisplay;
+export default NASADataDisplay;

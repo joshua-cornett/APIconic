@@ -1,6 +1,6 @@
 {
   "name": "package.json",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -31,10 +31,11 @@
   },
   "dependencies": {
     "auto-changelog": "*",
-    "axios": "^1.6.8",
+    "axios": "*",
     "prompt": "*",
+    "react-router-dom": "*",
     "semver": "*",
-    "xml2js": "^0.6.2"
+    "xml2js": "*"
   },
   "config": {
     "commitizen": {
