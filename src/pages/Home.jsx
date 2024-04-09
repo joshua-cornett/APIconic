@@ -14,7 +14,7 @@ const Home = () => {
             />
             <div className="absolute left-0 top-0 h-full w-full bg-black opacity-50"></div>
             <div className="absolute left-0 top-0 flex h-full w-full items-center justify-center text-4xl font-bold text-white">
-              <h1>Welcome to APIfy!</h1>
+              <h1>Welcome to APInify!</h1>
             </div>
           </div>
         </div>
