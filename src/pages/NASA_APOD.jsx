@@ -1,6 +1,6 @@
 // NASA_APOD.jsx
 import React from 'react';
-import NASA_APOD_DataDisplay from '../components/dataDisplays/NASA_APOD_DataDisplay';
+import { NASA_APOD_DataDisplay } from '../components/dataDisplays/';
 
 const NASA_APOD = () => {
   return (

@@ -16,6 +16,14 @@ const Navbar = () => (
             NASA APOD
           </NavLink>
         </li>
+        <li>
+          <NavLink
+            to="/Particles"
+            className="ml-6 text-lg text-white transition duration-300 hover:text-black"
+          >
+            Particles
+          </NavLink>
+        </li>
         {/* Repeat for any new pages */}
       </ul>
     </div>
