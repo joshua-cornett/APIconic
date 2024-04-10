@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .active {
-    color: white;
+    color: black;
     font-weight: bold;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: black;

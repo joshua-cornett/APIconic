@@ -1,4 +1,3 @@
-import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 const Navbar = () => (
@@ -14,6 +13,14 @@ const Navbar = () => (
             className="ml-6 text-lg text-white transition duration-300 hover:text-black"
           >
             NASA APOD
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="/Weather"
+            className="ml-6 text-lg text-white transition duration-300 hover:text-black"
+          >
+            Weather
           </NavLink>
         </li>
         {/* Repeat for any new pages */}

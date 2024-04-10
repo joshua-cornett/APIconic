@@ -1,5 +1,3 @@
-import React from 'react';
-
 const KeyFeature = ({ title, description }) => {
   return (
     <div className="rounded-lg bg-white p-6 shadow-md">

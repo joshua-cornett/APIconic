@@ -1,4 +1,3 @@
-import React from 'react';
 import { HeroSection, KeyFeature } from '../components';
 
 const Home = () => {

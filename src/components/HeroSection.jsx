@@ -1,5 +1,3 @@
-import React from 'react';
-
 const HeroSection = () => {
   return (
     <div className="mb-8 overflow-hidden rounded-lg bg-teal-500">
