@@ -4,6 +4,7 @@
   "homepage": "https://joshua-cornett.github.io/",
   "private": true,
   "scripts": {
+    "latest": "node updateDependencies.js",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d src/dist",
     "postdeploy": "echo See Deployment: https://joshua-cornett.github.io/APIconic",
@@ -41,10 +42,10 @@
   "dependencies": {
     "auto-changelog": "latest",
     "axios": "latest",
-    "plotly.js": "^2.30.1",
+    "plotly.js": "latest",
     "postcss-cli": "latest",
     "prompt": "latest",
-    "react-plotly.js": "^2.6.0",
+    "react-plotly.js": "latest",
     "react-router-dom": "latest",
     "semver": "latest",
     "xml2js": "latest"
